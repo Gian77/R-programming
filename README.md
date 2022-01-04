@@ -9,6 +9,7 @@ If you have double authentication factor in your GitHib account you should use *
 
 Have a look at these links:
 <https://happygitwithr.com/ssh-keys.html>
+<https://gist.github.com/aprilmintacpineda/f101bf5fd34f1e6664497cf4b9b9345f>
 
 First, you need to create key pairs, and enter a passphrase. On Mac you can do:
 
