@@ -1,9 +1,9 @@
-# *Create and R package, push it on Github and maintain it*
+### *Create and R package, push it on Github, and maintain it*
 
 Inspiring guides at: <br>
 <https://www.youtube.com/watch?v=kQ5QkN4Kx4Q&t=138s><br>
 <https://kbroman.org/pkg_primer/pages/github.html><br>
-<https://pjnewcombe.wordpress.com/2014/05/31/using-rstudio-to-create-and-maintain-an-r-package-on-github/>
+<https://pjnewcombe.wordpress.com/2014/05/31/using-rstudio-to-create-and-maintain-an-r-package-on-github/><br>
 
 From RStudio, create a new project. Among the options, choose R package and include the Git option.
 
@@ -27,23 +27,19 @@ gian-21@Gians-MacBook-Air ~ % git branch -M main
 gian-21@Gians-MacBook-Air ~ % git push -u origin main
 ```
 
-> **_NOTE_** If this error occur :
+> **_NOTE_** If this error reported below occurs to you:
 > ```error: remote origin already exists.```
-> then you can remove the origin, there cannot be two local repo with the same origin. remove the git origin in one or the other repo in your computer.
+> then you can remove the origin, there cannot be two local repo with the same origin. Remove the git origin in one or the other repo in your computer.
 > ```git remote remove origin```
 
-Go to Github and refresh the page and your repo should now list all the files generated in RStudio for your R package.
+Then, on Github, if you refresh the browser page, your repo should now list all the files generated in RStudio for your R package.
 
-If you want to make modifications or add functions, documentation, manuals etc. to your package, you can do it form RStudio and then commit and push the new/updates files to GitHub. 
+If you want to make modifications or add functions, documentation, manuals etc. to your package, you can do it form RStudio and then add, commit, and push the new/updates files to GitHub.
 
 Finally, to test if your package can be installed form GitHub, form RStudio:
 
-```> devtools::install_github("Gian77/Misfunk")```
+```
+> devtools::install_github("Gian77/Misfunk")
+```
 
 If everything runs smoothly, congrats, you are done!
-
-
-
-
-
-
