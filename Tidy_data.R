@@ -25,3 +25,16 @@ left_join(
                      var = "SampleID"),
   by = "SampleID"
 )
+
+
+# Sum across only numeric columns in a dataframes
+
+fungi_otu_rf %>%
+  select(.data = ., starts_with("FOTU")) %>%
+  t() %>%
+  as.data.frame() %>%
+  mutate(Sum = rowSums(x = .)) %>%
+  full_join(x = rownames_to_column(., var = "OTU"),
+            y = sel_df_fungi_tax,
+            by = "OTU") %>%
+  arrange(., desc(Sum))
