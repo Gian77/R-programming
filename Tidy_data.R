@@ -27,8 +27,7 @@ left_join(
 )
 
 
-# Sum across only numeric columns in a dataframes
-
+# How to sum across only numeric columns in a dataframes
 fungi_otu_rf %>%
   select(.data = ., starts_with("FOTU")) %>%
   t() %>%
@@ -38,3 +37,10 @@ fungi_otu_rf %>%
             y = sel_df_fungi_tax,
             by = "OTU") %>%
   arrange(., desc(Sum))
+
+
+# How to calculate frequency across dataframe columns
+library(dplyr)
+df %>% mutate(count=rowSums(.!=0))
+df %>% mutate(count=rowSums(.[1:3]!=0))
+df %>% mutate(count=rowSums(select(.,starts_with("mode"))!=0))
