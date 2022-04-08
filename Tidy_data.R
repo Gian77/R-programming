@@ -68,3 +68,10 @@ df %>% column_to_rownames(.data = ., var = "Group")
 
 # How to rows that have NAs in all columns
 df %>% filter(.data = ., rowSums(is.na(x = .)) != ncol(x = .))
+
+# How to filter rows matching a certain string in a defined column
+df %>%  filter(.data = ., !grepl("unclassified_*",Genus))
+
+# How to substitute NA with a text
+df$x %>% replace_na("unknown")
+replace(is.na(.), 0)
