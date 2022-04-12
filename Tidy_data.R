@@ -74,4 +74,9 @@ df %>%  filter(.data = ., !grepl("unclassified_*",Genus))
 
 # How to substitute NA with a text
 df$x %>% replace_na("unknown")
-replace(is.na(.), 0)
+df %>% replace(is.na(.), 0)
+df %>% mutate_all(., ~replace_na(.,0))
+
+# How to remove columns by name
+df %>% subset(., select = -c(A134))
+df %>% subset(., select = -c(sample_35))
